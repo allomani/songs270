@@ -1,0 +1,35 @@
+RewriteEngine On
+
+
+RewriteRule ^song_listen_(.*)_(.*) download.php?op=listen&id=$1&cat=$2
+RewriteRule ^song_listen_(.*) download.php?op=listen&id=$1
+
+RewriteRule ^song_download_(.*)_(.*) download.php?id=$1&cat=$2
+RewriteRule ^song_download_(.*) download.php?id=$1&cat=1
+
+
+RewriteRule ^video_watch_(.*) download.php?action=video&op=watch&id=$1
+RewriteRule ^video_download_(.*) download.php?action=video&id=$1
+
+
+RewriteRule ^singer-(.*)-(.*)-(.*)-(.*)-(.*).html index.php?action=songs&id=$1&album_id=$2&orderby=$3&sort=$4&start=$5
+RewriteRule ^singer-(.*).html index.php?action=songs&id=$1
+
+
+
+RewriteRule ^album-(.*)-(.*).html index.php?action=songs&id=$1&album_id=$2
+
+RewriteRule ^lyrics-(.*).html index.php?action=lyrics&id=$1
+
+RewriteRule ^cat-(.*).html index.php?action=browse&op=cat&id=$1
+
+RewriteRule ^videos-(.*)-(.*).html index.php?action=browse_videos&cat=$1&start=$2
+RewriteRule ^videos-(.*).html index.php?action=browse_videos&cat=$1
+
+
+RewriteRule ^news_(.*)_(.*).html index.php?action=news&date=$1&start=$2
+RewriteRule ^news_(.*).html index.php?action=news&id=$1
+RewriteRule ^news.html index.php?action=news
+
+
+RewriteRule ^sitemap.xml sitemap.php
