@@ -24,11 +24,6 @@ require(CWD . "/config.php") ;
 
 
 //----------------- php5 varialbs support -----------------------------
-$ver_str = phpversion();
-list($php_major, $php_minor, $php_sub) = explode( ".", $ver_str);
-if( intval($php_major) >= 5) {
-$reg_long_arrays = ini_get('register_long_arrays');
-if( $reg_long_arrays == 0 ) {
 
 $HTTP_POST_VARS   = !empty($HTTP_POST_VARS)   ? $HTTP_POST_VARS   : $_POST;
 $HTTP_GET_VARS    = !empty($HTTP_GET_VARS)    ? $HTTP_GET_VARS    : $_GET;
@@ -37,8 +32,6 @@ $HTTP_SERVER_VARS = !empty($HTTP_SERVER_VARS) ? $HTTP_SERVER_VARS : $_SERVER;
 $HTTP_POST_FILES = !empty($HTTP_POST_FILES) ? $HTTP_SERVER_VARS : $_FILES;
 $HTTP_ENV_VARS = !empty($HTTP_ENV_VARS) ? $HTTP_SERVER_VARS : $_ENV;
 
-}
-}
 //--------- extract variabls -----------------------
  if (!empty($HTTP_POST_VARS)) {extract($HTTP_POST_VARS);}
 if (!empty($HTTP_GET_VARS)) {extract($HTTP_GET_VARS);}
